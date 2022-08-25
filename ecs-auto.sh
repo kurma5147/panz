@@ -1,12 +1,12 @@
 #!/bin/bash
-SERVICE="siva"
-CLUSTER_NAME="siva"
-AWS_REGION="us-east-1"
-export AWS_PROFILE=default
+SERVICE="CodeCommitService"
+CLUSTER_NAME="CodeCommitService"
+AWS_REGION="ap-south-1"
+export AWS_PROFILE=defaultCodeCommitService
 
 # Register a new Task definition 
-aws ecs register-task-definition --family siva --cli-input-json file://task-new.json --region $AWS_REGION
+aws ecs register-task-definition --family CodeCommitService --cli-input-json file://task-new.json --region $AWS_REGION
 
 # Update Service in the Cluster
-aws ecs update-service --cluster $CLUSTER_NAME --service $SERVICE --task-definition siva --desired-count 1 --region $AWS_REGION
+aws ecs update-service --cluster $CLUSTER_NAME --CodeCommitService $SERVICE --task-definition TaskCodeCommit --desired-count 1 --region $AWS_REGION
 
