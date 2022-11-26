@@ -20,7 +20,7 @@ phases:
       - docker push $REPOSITORY_URI:vijay-${CODEBUILD_BUILD_NUMBER}
       - echo writing image definitions file...
       - printf '[{"name":"vijay","imageUri":"%s"}]' $REPOSITORY_URI:vijay-${CODEBUILD_BUILD_NUMBER} > imagedefinitions.json
-      - cat imagedefinitions.jsony
+      - cat imagedefinitions.json
       - pwd
 artifacts:
     files: imagedefinitions.json
